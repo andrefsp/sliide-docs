@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to Sliide SDK documentation! &mdash; partners  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="partners  documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> partners
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Sliide SDK documentation!</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-registration">Application Registration</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">partners</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to Sliide SDK documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-sliide-sdk-documentation">
+<h1>Welcome to Sliide SDK documentation!<a class="headerlink" href="#welcome-to-sliide-sdk-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Sliide SDK provides an easy way to integrate with any app so that it can provide Ad Funded features within your app. This documentation will show how to integrate Sliide SDK with any app.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Sliide SDK provides a way for any app to build user credit ad funds. These funds can than be used to fund any payed app feature.</p>
+<p>The SDK is designed in a way that makes it very simple to start using Sliide as it virtually does not require any user registration. The SDK simply starts and builds credit for a particular user specified by unique identifier <code class="docutils literal"><span class="pre">user_id</span></code> and also a <code class="docutils literal"><span class="pre">app_id</span></code>. We will be exploring this later on.</p>
+<p>The step required is the app registeration.The app registration process will provide an <code class="docutils literal"><span class="pre">app_id</span></code> and an <code class="docutils literal"><span class="pre">app_secret</span></code>. There two valus will help Sliide to know what application does a user belong to.</p>
+<p>The next block shows an high level overview of credit build-up.</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="o">+-------------------+</span>
+<span class="o">|</span>    <span class="n">App</span>            <span class="o">|</span>
+<span class="o">|</span>   <span class="o">+---------------+</span>                  <span class="o">+---------------+</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="n">SDK</span><span class="p">(</span><span class="n">Sliide</span><span class="p">)</span>   <span class="o">|</span>   <span class="o">&lt;------------&gt;</span> <span class="o">|</span>  <span class="n">Sliide</span> <span class="n">API</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">*</span> <span class="n">App</span><span class="o">-</span><span class="n">Id</span>    <span class="o">|</span>      <span class="n">User</span><span class="o">-</span><span class="n">Id</span>     <span class="o">+---------------+</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">*</span> <span class="n">User</span> <span class="n">ID</span>   <span class="o">|</span>      <span class="n">App</span><span class="o">-</span><span class="n">Id</span>
+<span class="o">+---+---------------+</span>
+</pre></div>
+</div>
+<p>When a certain level of credit is reached, a user can than request to cashout its credits to the App. This process is based on the App to provide a Server-To-Server URL so that Sliide can inform the app server of the user intentions to cashout. This process is fully managed by Sliide .</p>
+<p>The block shows an overview.</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="o">+-------------------+</span>
+<span class="o">|</span>    <span class="n">App</span>            <span class="o">|</span>
+<span class="o">|</span>   <span class="o">+---------------+</span>                   <span class="o">+---------------+</span>                <span class="o">+---------------+</span>
+<span class="o">|</span>   <span class="o">|</span> <span class="n">SDK</span><span class="p">(</span><span class="n">Sliide</span><span class="p">)</span>   <span class="o">|</span>   <span class="o">&lt;-------------&gt;</span> <span class="o">|</span>  <span class="n">Sliide</span> <span class="n">API</span>   <span class="o">|</span> <span class="o">&lt;------------&gt;</span> <span class="o">|</span>   <span class="n">App</span> <span class="n">Server</span>  <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">*</span> <span class="n">App</span><span class="o">-</span><span class="n">Id</span>    <span class="o">|</span>       <span class="n">User</span><span class="o">-</span><span class="n">Id</span>     <span class="o">+---------------+</span>    <span class="n">User</span><span class="o">-</span><span class="n">Id</span>     <span class="o">+---------------+</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">*</span> <span class="n">User</span> <span class="n">ID</span>   <span class="o">|</span>       <span class="n">App</span><span class="o">-</span><span class="n">Id</span>                           <span class="n">Amount</span>
+<span class="o">+---+---------------+</span>       <span class="n">Amount</span>
+</pre></div>
+</div>
+<p>Along this document we will be explaining app registration and cashout integration which is the only two needed integrations.</p>
+</div>
+</div>
+<div class="section" id="application-registration">
+<h1>Application Registration<a class="headerlink" href="#application-registration" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Plus44 Sliide.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
